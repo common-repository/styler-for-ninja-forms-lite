@@ -1,0 +1,43 @@
+<script id="tmpl-nf-field-listcheckbox" type="text/template">
+   
+    {{{ data.sfnfBeforeInput }}}
+    <ul aria-describedby="nf-error-{{{ data.id }}}">
+        {{{ data.renderOptions() }}}
+    </ul>
+</script>
+
+<script id='tmpl-nf-field-listcheckbox-option' type='text/template'>
+    <# if ( ! data.visible ) { return '' } #>
+
+    <li class="{{{ data.settingModel.checkbox_container }}}">
+        <input type="checkbox" id="nf-field-{{{ data.fieldID }}}-{{{ data.index }}}" name="nf-field-{{{ data.fieldID }}}" class="{{{ data.classes }}} {{{ data.settingModel.checkbox_input }}} nf-element {{{ ( data.isSelected ) ? ' nf-checked' : '' }}}" value="{{{ data.value }}}" {{{ ( data.isSelected ) ? 'checked="checked"' : '' }}}
+            aria-labelledby="nf-label-field-{{{ data.fieldID }}}-{{{ data.index }}}"
+            <# if( data.required ) { #>
+			required
+			<# } #>
+        >
+        <label for="nf-field-{{{ data.fieldID }}}-{{{ data.index }}}"
+               id="nf-label-field-{{{ data.fieldID }}}-{{{ data.index }}}"
+               class="{{{ ( data.isSelected ) ? 'nf-checked-label' : '' }}} {{{ data.settingModel.checkbox_input }}}">{{{ data.label }}}</label>
+    </li>
+</script>
+
+<script id='tmpl-nf-field-listcheckbox-other' type='text/template'>
+    <li class="{{{ data.settingModel.checkbox_container }}}" {{{ ( ! data.visible ) ? 'style="display:none"' : '' }}}>
+        <input type="checkbox"
+               id="nf-field-{{{ data.fieldID }}}-other"
+               name="nf-field-{{{ data.fieldID }}}" class="{{{ data.classes }}} nf-element {{{ data.settingModel.checkbox_input }}}" value="nf-other" {{{ ( ! data.valueFound ) ? 'checked="checked"' : '' }}}
+            aria-labelledby="nf-label-field-{{{ data.fieldID }}}-other"
+            <# if( data.required ) { #>
+			required
+			<# } #>
+        >
+         <label id="nf-label-field-{{{ data.fieldID }}}-other" class="{{{ data.settingModel.checkbox_input }}}">Other
+            {{{ data.renderOtherText() }}}
+        </label>
+    </li>
+</script>
+
+<script id='tmpl-nf-field-listcheckbox-other-text' type='text/template'>
+    <input type="text" name="nf-field-{{{ data.fieldID }}}" class="nf-element" value="{{{ data.currentValue }}}">
+</script>

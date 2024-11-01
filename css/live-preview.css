@@ -1,0 +1,26 @@
+.nf-form-content .nf-styler-selected-field {
+	outline: 2px dashed rgba(0, 0, 0, .25) !important;
+}
+
+.customize-partial-edit-shortcut.sfnf-lable-shortcut-icon-below{
+	bottom: 25px !important;
+}
+
+.customize-partial-edit-shortcut.sfnf-description-shortcut-icon-below{
+	bottom: 55px !important;
+}
+
+.customize-partial-edit-shortcut.sfnf-lable-shortcut-icon-right{
+	right: 0px;
+}
+.nf-form-cont .customize-partial-edit-shortcut{
+	display: none;
+}
+div.nf-form-cont{
+	position: relative;
+}
+
+.nf-styler-partial-form-title-shortcut{
+	top: 25px;
+    left: 15px;
+}
